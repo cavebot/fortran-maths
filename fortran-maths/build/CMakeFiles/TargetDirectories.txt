@@ -1,0 +1,3 @@
+/home/adam/Projects/fortran-maths/build/CMakeFiles/openblas_example.dir
+/home/adam/Projects/fortran-maths/build/CMakeFiles/edit_cache.dir
+/home/adam/Projects/fortran-maths/build/CMakeFiles/rebuild_cache.dir

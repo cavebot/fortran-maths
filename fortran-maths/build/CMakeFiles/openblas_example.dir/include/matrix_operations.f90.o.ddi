@@ -1,0 +1,20 @@
+{
+	"revision" : 0,
+	"rules" : 
+	[
+		{
+			"outputs" : [],
+			"primary-output" : "CMakeFiles/openblas_example.dir/include/matrix_operations.f90.o",
+			"provides" : 
+			[
+				{
+					"compiled-module-path" : "matrix_operations.mod",
+					"is-interface" : true,
+					"logical-name" : "matrix_operations.mod"
+				}
+			],
+			"requires" : []
+		}
+	],
+	"version" : 0
+}

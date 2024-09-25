@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/adam/Projects/fortran-maths/build",
+  "command": "/usr/bin/f95 -I/home/adam/Projects/fortran-maths/include -g -c /home/adam/Projects/fortran-maths/src/main.f90 -o CMakeFiles/openblas_example.dir/src/main.f90.o",
+  "file": "/home/adam/Projects/fortran-maths/src/main.f90",
+  "output": "CMakeFiles/openblas_example.dir/src/main.f90.o"
+},
+{
+  "directory": "/home/adam/Projects/fortran-maths/build",
+  "command": "/usr/bin/f95 -I/home/adam/Projects/fortran-maths/include -g -c /home/adam/Projects/fortran-maths/src/utils.f90 -o CMakeFiles/openblas_example.dir/src/utils.f90.o",
+  "file": "/home/adam/Projects/fortran-maths/src/utils.f90",
+  "output": "CMakeFiles/openblas_example.dir/src/utils.f90.o"
+},
+{
+  "directory": "/home/adam/Projects/fortran-maths/build",
+  "command": "/usr/bin/f95 -I/home/adam/Projects/fortran-maths/include -g -c /home/adam/Projects/fortran-maths/include/matrix_operations.f90 -o CMakeFiles/openblas_example.dir/include/matrix_operations.f90.o",
+  "file": "/home/adam/Projects/fortran-maths/include/matrix_operations.f90",
+  "output": "CMakeFiles/openblas_example.dir/include/matrix_operations.f90.o"
+}
+]
