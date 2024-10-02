@@ -32,8 +32,8 @@ function(create_executable target_name source_file)
     target_link_libraries(${target_name} PRIVATE ${OPENBLAS_LIBRARIES})
 endfunction()
 
-create_executable(matrix_multiply.exe ${CMAKE_SOURCE_DIR}/src/matrix_multiply.f90)
-create_executable(diagonalization.exe ${CMAKE_SOURCE_DIR}/src/diagonalization.f90)
+# create_executable(matrix_multiply.exe ${CMAKE_SOURCE_DIR}/src/matrix_multiply.f90)
+# create_executable(diagonalization.exe ${CMAKE_SOURCE_DIR}/src/diagonalization.f90)
 
 add_executable(hpc_hello.exe ${CMAKE_SOURCE_DIR}/src/hpc_hello.f90)
 set_target_properties(hpc_hello.exe PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
