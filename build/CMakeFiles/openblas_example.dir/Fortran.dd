@@ -1,9 +1,0 @@
-ninja_dyndep_version = 1.0
-build CMakeFiles/openblas_example.dir/src/main.f90.o: dyndep | matrix_operations.mod utils.mod
-
-build CMakeFiles/openblas_example.dir/src/utils.f90.o | utils.mod: dyndep
-  restat = 1
-
-build CMakeFiles/openblas_example.dir/include/matrix_operations.f90.o | matrix_operations.mod: dyndep
-  restat = 1
-

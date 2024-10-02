@@ -21,4 +21,17 @@ module matrix_operations
     call dgemm('N', 'N', m, n, k, alpha, A, lda, B, ldb, beta, C, ldc)
   end subroutine matrix_multiply_blas
 
+
+  function generate_random_matrix(n) result(B)
+    integer, intent(in) :: n 
+    real(8), dimension(n,n) :: A, B
+    integer(4) :: i, j, size
+    integer, dimension(8) :: seed  ! Seed array
+
+    call random_seed(put=seed)
+    call random_number(B)
+
+  end function generate_random_matrix
+
+
 end module matrix_operations

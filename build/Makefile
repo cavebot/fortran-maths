@@ -117,24 +117,51 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named openblas_example
+# Target rules for targets named matrix_multiply.exe
 
 # Build rule for target.
-openblas_example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 openblas_example
-.PHONY : openblas_example
+matrix_multiply.exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 matrix_multiply.exe
+.PHONY : matrix_multiply.exe
 
 # fast build rule for target.
-openblas_example/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/build
-.PHONY : openblas_example/fast
+matrix_multiply.exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/build
+.PHONY : matrix_multiply.exe/fast
+
+#=============================================================================
+# Target rules for targets named diagonalization.exe
+
+# Build rule for target.
+diagonalization.exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 diagonalization.exe
+.PHONY : diagonalization.exe
+
+# fast build rule for target.
+diagonalization.exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/build
+.PHONY : diagonalization.exe/fast
+
+#=============================================================================
+# Target rules for targets named hpc_hello.exe
+
+# Build rule for target.
+hpc_hello.exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hpc_hello.exe
+.PHONY : hpc_hello.exe
+
+# fast build rule for target.
+hpc_hello.exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hpc_hello.exe.dir/build.make CMakeFiles/hpc_hello.exe.dir/build
+.PHONY : hpc_hello.exe/fast
 
 include/matrix_operations.o: include/matrix_operations.f90.o
 .PHONY : include/matrix_operations.o
 
 # target to build an object file
 include/matrix_operations.f90.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/include/matrix_operations.f90.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/include/matrix_operations.f90.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/include/matrix_operations.f90.o
 .PHONY : include/matrix_operations.f90.o
 
 include/matrix_operations.i: include/matrix_operations.f90.i
@@ -142,7 +169,8 @@ include/matrix_operations.i: include/matrix_operations.f90.i
 
 # target to preprocess a source file
 include/matrix_operations.f90.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/include/matrix_operations.f90.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/include/matrix_operations.f90.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/include/matrix_operations.f90.i
 .PHONY : include/matrix_operations.f90.i
 
 include/matrix_operations.s: include/matrix_operations.f90.s
@@ -150,56 +178,108 @@ include/matrix_operations.s: include/matrix_operations.f90.s
 
 # target to generate assembly for a file
 include/matrix_operations.f90.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/include/matrix_operations.f90.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/include/matrix_operations.f90.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/include/matrix_operations.f90.s
 .PHONY : include/matrix_operations.f90.s
 
-src/main.o: src/main.f90.o
-.PHONY : src/main.o
+include/utils.o: include/utils.f90.o
+.PHONY : include/utils.o
 
 # target to build an object file
-src/main.f90.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/src/main.f90.o
-.PHONY : src/main.f90.o
+include/utils.f90.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/include/utils.f90.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/include/utils.f90.o
+.PHONY : include/utils.f90.o
 
-src/main.i: src/main.f90.i
-.PHONY : src/main.i
+include/utils.i: include/utils.f90.i
+.PHONY : include/utils.i
 
 # target to preprocess a source file
-src/main.f90.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/src/main.f90.i
-.PHONY : src/main.f90.i
+include/utils.f90.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/include/utils.f90.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/include/utils.f90.i
+.PHONY : include/utils.f90.i
 
-src/main.s: src/main.f90.s
-.PHONY : src/main.s
+include/utils.s: include/utils.f90.s
+.PHONY : include/utils.s
 
 # target to generate assembly for a file
-src/main.f90.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/src/main.f90.s
-.PHONY : src/main.f90.s
+include/utils.f90.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/include/utils.f90.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/include/utils.f90.s
+.PHONY : include/utils.f90.s
 
-src/utils.o: src/utils.f90.o
-.PHONY : src/utils.o
+src/diagonalization.o: src/diagonalization.f90.o
+.PHONY : src/diagonalization.o
 
 # target to build an object file
-src/utils.f90.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/src/utils.f90.o
-.PHONY : src/utils.f90.o
+src/diagonalization.f90.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/src/diagonalization.f90.o
+.PHONY : src/diagonalization.f90.o
 
-src/utils.i: src/utils.f90.i
-.PHONY : src/utils.i
+src/diagonalization.i: src/diagonalization.f90.i
+.PHONY : src/diagonalization.i
 
 # target to preprocess a source file
-src/utils.f90.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/src/utils.f90.i
-.PHONY : src/utils.f90.i
+src/diagonalization.f90.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/src/diagonalization.f90.i
+.PHONY : src/diagonalization.f90.i
 
-src/utils.s: src/utils.f90.s
-.PHONY : src/utils.s
+src/diagonalization.s: src/diagonalization.f90.s
+.PHONY : src/diagonalization.s
 
 # target to generate assembly for a file
-src/utils.f90.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openblas_example.dir/build.make CMakeFiles/openblas_example.dir/src/utils.f90.s
-.PHONY : src/utils.f90.s
+src/diagonalization.f90.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagonalization.exe.dir/build.make CMakeFiles/diagonalization.exe.dir/src/diagonalization.f90.s
+.PHONY : src/diagonalization.f90.s
+
+src/hpc_hello.o: src/hpc_hello.f90.o
+.PHONY : src/hpc_hello.o
+
+# target to build an object file
+src/hpc_hello.f90.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hpc_hello.exe.dir/build.make CMakeFiles/hpc_hello.exe.dir/src/hpc_hello.f90.o
+.PHONY : src/hpc_hello.f90.o
+
+src/hpc_hello.i: src/hpc_hello.f90.i
+.PHONY : src/hpc_hello.i
+
+# target to preprocess a source file
+src/hpc_hello.f90.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hpc_hello.exe.dir/build.make CMakeFiles/hpc_hello.exe.dir/src/hpc_hello.f90.i
+.PHONY : src/hpc_hello.f90.i
+
+src/hpc_hello.s: src/hpc_hello.f90.s
+.PHONY : src/hpc_hello.s
+
+# target to generate assembly for a file
+src/hpc_hello.f90.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hpc_hello.exe.dir/build.make CMakeFiles/hpc_hello.exe.dir/src/hpc_hello.f90.s
+.PHONY : src/hpc_hello.f90.s
+
+src/matrix_multiply.o: src/matrix_multiply.f90.o
+.PHONY : src/matrix_multiply.o
+
+# target to build an object file
+src/matrix_multiply.f90.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/src/matrix_multiply.f90.o
+.PHONY : src/matrix_multiply.f90.o
+
+src/matrix_multiply.i: src/matrix_multiply.f90.i
+.PHONY : src/matrix_multiply.i
+
+# target to preprocess a source file
+src/matrix_multiply.f90.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/src/matrix_multiply.f90.i
+.PHONY : src/matrix_multiply.f90.i
+
+src/matrix_multiply.s: src/matrix_multiply.f90.s
+.PHONY : src/matrix_multiply.s
+
+# target to generate assembly for a file
+src/matrix_multiply.f90.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_multiply.exe.dir/build.make CMakeFiles/matrix_multiply.exe.dir/src/matrix_multiply.f90.s
+.PHONY : src/matrix_multiply.f90.s
 
 # Help Target
 help:
@@ -209,16 +289,24 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... openblas_example"
+	@echo "... diagonalization.exe"
+	@echo "... hpc_hello.exe"
+	@echo "... matrix_multiply.exe"
 	@echo "... include/matrix_operations.o"
 	@echo "... include/matrix_operations.i"
 	@echo "... include/matrix_operations.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/utils.o"
-	@echo "... src/utils.i"
-	@echo "... src/utils.s"
+	@echo "... include/utils.o"
+	@echo "... include/utils.i"
+	@echo "... include/utils.s"
+	@echo "... src/diagonalization.o"
+	@echo "... src/diagonalization.i"
+	@echo "... src/diagonalization.s"
+	@echo "... src/hpc_hello.o"
+	@echo "... src/hpc_hello.i"
+	@echo "... src/hpc_hello.s"
+	@echo "... src/matrix_multiply.o"
+	@echo "... src/matrix_multiply.i"
+	@echo "... src/matrix_multiply.s"
 .PHONY : help
 
 

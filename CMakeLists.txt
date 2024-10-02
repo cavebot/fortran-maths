@@ -1,31 +1,40 @@
-
-
 cmake_minimum_required(VERSION 3.10)
-project(OpenBLASExample Fortran)
+project(FortranMatrixOps C Fortran)
 
-# Set the OpenBLAS directory
-set(OpenBLAS_DIR "/usr/lib/x86_64-linux-gnu/openblas-pthread/cmake/openblas")  
+# Set module output directory for Fortran .mod files
+set(MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/include)
+include_directories(${MODULE_DIRECTORY})
 
-# Find OpenBLAS
-find_package(OpenBLAS REQUIRED)
+set(OPENBLAS_DIR "/usr/lib/x86_64-linux-gnu/openblas-pthread")
+set(OPENBLAS_LIBRARIES ${OPENBLAS_DIR}/libopenblas.so)
 
-# Include directories for module files
-include_directories(include)
+find_package(MPI REQUIRED)
+include_directories(${MPI_Fortran_INCLUDE_PATH})
 
-# Specify the module sources
-set(MODULE_SOURCES 
-    include/matrix_operations.f90 
+
+# enable_language(Fortran)
+
+
+# Set Fortran compiler flags for MPI
+set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} ${MPI_Fortran_FLAGS}")
+
+set(COMMON_SOURCES
+    ${CMAKE_SOURCE_DIR}/include/matrix_operations.f90
+    ${CMAKE_SOURCE_DIR}/include/utils.f90
 )
 
-# Create the executable target
-add_executable(openblas_example src/main.f90 src/utils.f90 ${MODULE_SOURCES})
+# Function to create executable that uses BLAS and common sources
+function(create_executable target_name source_file)
+    add_executable(${target_name} ${source_file} ${COMMON_SOURCES})
+    set_target_properties(${target_name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+    
+    # Link the target with the OpenBLAS and LAPACK libraries
+    target_link_libraries(${target_name} PRIVATE ${OPENBLAS_LIBRARIES})
+endfunction()
 
-# Specify where to put the executables
-set_target_properties(openblas_example PROPERTIES 
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # Specify executable output directory
+create_executable(matrix_multiply.exe ${CMAKE_SOURCE_DIR}/src/matrix_multiply.f90)
+create_executable(diagonalization.exe ${CMAKE_SOURCE_DIR}/src/diagonalization.f90)
 
-# Specify where to put the module files
-set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/include)  # Specify module output directory
-
-# Link OpenBLAS directly
-target_link_libraries(openblas_example PRIVATE /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblas.so)
+add_executable(hpc_hello.exe ${CMAKE_SOURCE_DIR}/src/hpc_hello.f90)
+set_target_properties(hpc_hello.exe PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+target_link_libraries(hpc_hello.exe ${MPI_Fortran_LIBRARIES})
