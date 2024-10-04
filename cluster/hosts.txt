@@ -1,2 +1,2 @@
-192.168.0.76 slots=4
-192.168.0.224 slots=4
+adam-master:2
+adam-81cu:2
