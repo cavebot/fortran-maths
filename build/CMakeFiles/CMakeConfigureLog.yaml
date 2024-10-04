@@ -1637,3 +1637,144 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1282 (try_compile)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1326 (_MPI_try_staged_settings)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1649 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-Nwmo9U"
+      binary: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-Nwmo9U"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-Nwmo9U'
+        
+        Run Build Command(s): /home/adam/.local/bin/ninja -v cmTC_d0d17
+        [1/2] /usr/bin/gcc-13   -pthread -o CMakeFiles/cmTC_d0d17.dir/test_mpi.c.o -c /home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-Nwmo9U/test_mpi.c
+        [2/2] : && /usr/bin/gcc-13  -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags -pthread CMakeFiles/cmTC_d0d17.dir/test_mpi.c.o -o cmTC_d0d17  -Wl,-rpath,/usr/local/lib  /usr/local/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1282 (try_compile)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1301 (_MPI_try_staged_settings)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1649 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for Fortran in mode F77_HEADER"
+    directories:
+      source: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-INIJ6U"
+      binary: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-INIJ6U"
+    cmakeVariables:
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_Fortran_FLAGS: ""
+      CMAKE_Fortran_FLAGS_DEBUG: "-g"
+    buildResult:
+      variable: "MPI_RESULT_Fortran_test_mpi_F77_HEADER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-INIJ6U'
+        
+        Run Build Command(s): /home/adam/.local/bin/ninja -v cmTC_ac12a
+        [1/4] /usr/bin/gfortran -cpp  -I/usr/local/include -I/usr/local/lib -pthread -E /home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-INIJ6U/test_mpi.f90 -o CMakeFiles/cmTC_ac12a.dir/test_mpi.f90-pp.f90 && /home/adam/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_ninja_depends --tdi=CMakeFiles/cmTC_ac12a.dir/FortranDependInfo.json --lang=Fortran --src=CMakeFiles/cmTC_ac12a.dir/test_mpi.f90-pp.f90 --out=CMakeFiles/cmTC_ac12a.dir/test_mpi.f90-pp.f90 --dep=CMakeFiles/cmTC_ac12a.dir/test_mpi.f90-pp.f90.d --obj=CMakeFiles/cmTC_ac12a.dir/test_mpi.f90.o --ddi=CMakeFiles/cmTC_ac12a.dir/test_mpi.f90.o.ddi --src-orig=/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-INIJ6U/test_mpi.f90
+        [2/4] /home/adam/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_ac12a.dir/FortranDependInfo.json --lang=Fortran --dd=CMakeFiles/cmTC_ac12a.dir/Fortran.dd @CMakeFiles/cmTC_ac12a.dir/Fortran.dd.rsp
+        [3/4] /usr/bin/gfortran -I/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-INIJ6U -I/usr/local/include -I/usr/local/lib -pthread -fpreprocessed -c CMakeFiles/cmTC_ac12a.dir/test_mpi.f90-pp.f90 -o CMakeFiles/cmTC_ac12a.dir/test_mpi.f90.o
+        [4/4] : && /usr/bin/gfortran -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags -pthread  CMakeFiles/cmTC_ac12a.dir/test_mpi.f90.o -o cmTC_ac12a  -Wl,-rpath,/usr/local/lib  /usr/local/lib/libmpi_usempif08.so  /usr/local/lib/libmpi_usempi_ignore_tkr.so  /usr/local/lib/libmpi_mpifh.so  /usr/local/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1282 (try_compile)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1302 (_MPI_try_staged_settings)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1649 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for Fortran in mode F90_MODULE"
+    directories:
+      source: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-pa7V0Q"
+      binary: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-pa7V0Q"
+    cmakeVariables:
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_Fortran_FLAGS: ""
+      CMAKE_Fortran_FLAGS_DEBUG: "-g"
+    buildResult:
+      variable: "MPI_RESULT_Fortran_test_mpi_F90_MODULE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-pa7V0Q'
+        
+        Run Build Command(s): /home/adam/.local/bin/ninja -v cmTC_f9b6e
+        [1/4] /usr/bin/gfortran -cpp  -I/usr/local/include -I/usr/local/lib -pthread -E /home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-pa7V0Q/test_mpi.f90 -o CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90-pp.f90 && /home/adam/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_ninja_depends --tdi=CMakeFiles/cmTC_f9b6e.dir/FortranDependInfo.json --lang=Fortran --src=CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90-pp.f90 --out=CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90-pp.f90 --dep=CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90-pp.f90.d --obj=CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90.o --ddi=CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90.o.ddi --src-orig=/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-pa7V0Q/test_mpi.f90
+        [2/4] /home/adam/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_f9b6e.dir/FortranDependInfo.json --lang=Fortran --dd=CMakeFiles/cmTC_f9b6e.dir/Fortran.dd @CMakeFiles/cmTC_f9b6e.dir/Fortran.dd.rsp
+        [3/4] /usr/bin/gfortran -I/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-pa7V0Q -I/usr/local/include -I/usr/local/lib -pthread -fpreprocessed -c CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90-pp.f90 -o CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90.o
+        [4/4] : && /usr/bin/gfortran -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags -pthread  CMakeFiles/cmTC_f9b6e.dir/test_mpi.f90.o -o cmTC_f9b6e  -Wl,-rpath,/usr/local/lib  /usr/local/lib/libmpi_usempif08.so  /usr/local/lib/libmpi_usempi_ignore_tkr.so  /usr/local/lib/libmpi_mpifh.so  /usr/local/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1282 (try_compile)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1303 (_MPI_try_staged_settings)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1649 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for Fortran in mode F08_MODULE"
+    directories:
+      source: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-5SZxkT"
+      binary: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-5SZxkT"
+    cmakeVariables:
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_Fortran_FLAGS: ""
+      CMAKE_Fortran_FLAGS_DEBUG: "-g"
+    buildResult:
+      variable: "MPI_RESULT_Fortran_test_mpi_F08_MODULE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-5SZxkT'
+        
+        Run Build Command(s): /home/adam/.local/bin/ninja -v cmTC_1c50a
+        [1/4] /usr/bin/gfortran -cpp  -I/usr/local/include -I/usr/local/lib -pthread -E /home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-5SZxkT/test_mpi.f90 -o CMakeFiles/cmTC_1c50a.dir/test_mpi.f90-pp.f90 && /home/adam/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_ninja_depends --tdi=CMakeFiles/cmTC_1c50a.dir/FortranDependInfo.json --lang=Fortran --src=CMakeFiles/cmTC_1c50a.dir/test_mpi.f90-pp.f90 --out=CMakeFiles/cmTC_1c50a.dir/test_mpi.f90-pp.f90 --dep=CMakeFiles/cmTC_1c50a.dir/test_mpi.f90-pp.f90.d --obj=CMakeFiles/cmTC_1c50a.dir/test_mpi.f90.o --ddi=CMakeFiles/cmTC_1c50a.dir/test_mpi.f90.o.ddi --src-orig=/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-5SZxkT/test_mpi.f90
+        [2/4] /home/adam/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_1c50a.dir/FortranDependInfo.json --lang=Fortran --dd=CMakeFiles/cmTC_1c50a.dir/Fortran.dd @CMakeFiles/cmTC_1c50a.dir/Fortran.dd.rsp
+        [3/4] /usr/bin/gfortran -I/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-5SZxkT -I/usr/local/include -I/usr/local/lib -pthread -fpreprocessed -c CMakeFiles/cmTC_1c50a.dir/test_mpi.f90-pp.f90 -o CMakeFiles/cmTC_1c50a.dir/test_mpi.f90.o
+        [4/4] : && /usr/bin/gfortran -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags -pthread  CMakeFiles/cmTC_1c50a.dir/test_mpi.f90.o -o cmTC_1c50a  -Wl,-rpath,/usr/local/lib  /usr/local/lib/libmpi_usempif08.so  /usr/local/lib/libmpi_usempi_ignore_tkr.so  /usr/local/lib/libmpi_mpifh.so  /usr/local/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1282 (try_compile)"
+      - "/home/adam/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.30/Modules/FindMPI.cmake:1711 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test mpiver for Fortran in mode F08_MODULE"
+    directories:
+      source: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-uSsEOT"
+      binary: "/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-uSsEOT"
+    cmakeVariables:
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_Fortran_FLAGS: ""
+      CMAKE_Fortran_FLAGS_DEBUG: "-g"
+    buildResult:
+      variable: "MPI_RESULT_Fortran_mpiver_F08_MODULE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-uSsEOT'
+        
+        Run Build Command(s): /home/adam/.local/bin/ninja -v cmTC_28284
+        [1/4] /usr/bin/gfortran -cpp  -I/usr/local/include -I/usr/local/lib -pthread -E /home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-uSsEOT/mpiver.f90 -o CMakeFiles/cmTC_28284.dir/mpiver.f90-pp.f90 && /home/adam/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_ninja_depends --tdi=CMakeFiles/cmTC_28284.dir/FortranDependInfo.json --lang=Fortran --src=CMakeFiles/cmTC_28284.dir/mpiver.f90-pp.f90 --out=CMakeFiles/cmTC_28284.dir/mpiver.f90-pp.f90 --dep=CMakeFiles/cmTC_28284.dir/mpiver.f90-pp.f90.d --obj=CMakeFiles/cmTC_28284.dir/mpiver.f90.o --ddi=CMakeFiles/cmTC_28284.dir/mpiver.f90.o.ddi --src-orig=/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-uSsEOT/mpiver.f90
+        [2/4] /home/adam/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_28284.dir/FortranDependInfo.json --lang=Fortran --dd=CMakeFiles/cmTC_28284.dir/Fortran.dd @CMakeFiles/cmTC_28284.dir/Fortran.dd.rsp
+        [3/4] /usr/bin/gfortran -I/home/adam/Projects/fortran-maths/build/CMakeFiles/CMakeScratch/TryCompile-uSsEOT -I/usr/local/include -I/usr/local/lib -pthread -fpreprocessed -c CMakeFiles/cmTC_28284.dir/mpiver.f90-pp.f90 -o CMakeFiles/cmTC_28284.dir/mpiver.f90.o
+        [4/4] : && /usr/bin/gfortran -Wl,-rpath -Wl,/usr/local/lib -Wl,--enable-new-dtags -pthread  CMakeFiles/cmTC_28284.dir/mpiver.f90.o -o cmTC_28284  -Wl,-rpath,/usr/local/lib  /usr/local/lib/libmpi_usempif08.so  /usr/local/lib/libmpi_usempi_ignore_tkr.so  /usr/local/lib/libmpi_mpifh.so  /usr/local/lib/libmpi.so && :
+        
+      exitCode: 0
+...

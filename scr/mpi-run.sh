@@ -5,7 +5,7 @@ HOSTFILE=~/Projects/fortran-maths/cluster/hosts.txt
 EXECUTABLE=~/Projects/fortran-maths/hpc_hello
 
 # Define the number of processes
-NUM_PROCESSES=4
+NUM_PROCESSES=2
 
 # Run the MPI program
 mpirun -machinefile "$HOSTFILE" -np "$NUM_PROCESSES" "$EXECUTABLE"

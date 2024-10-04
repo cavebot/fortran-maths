@@ -1,6 +1,18 @@
 module utils
+  use, intrinsic :: iso_c_binding
   implicit none
-contains
+
+  ! Interface for the C function gethostname
+  interface
+     function gethostname(name, namelen) bind(c, name="gethostname")
+        use, intrinsic :: iso_c_binding
+        character(kind=c_char), dimension(*), intent(out) :: name
+        integer, value :: namelen
+        integer :: gethostname
+     end function gethostname
+  end interface
+
+  contains
 
   subroutine print_matrix(A)
     real(8), dimension(:,:), intent(in) :: A
@@ -16,5 +28,7 @@ contains
       write(*, fmt) A(i, :)  ! Print each row using the defined format
     end do
   end subroutine print_matrix
+
+
 
 end module utils
