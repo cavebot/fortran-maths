@@ -15,7 +15,7 @@ program mpi_parallel_sum
    call mpi_comm_rank(mpi_comm_world, rank, ierr)
    call mpi_comm_size(mpi_comm_world, size, ierr)
 
-   n = 1000
+   n = 160000
 
    if (rank == 0) then
       allocate(array(n))
@@ -40,6 +40,8 @@ program mpi_parallel_sum
       local_sum = local_sum + local_array(i)
    end do
 
+   write(*,*) local_sum
+
    ! Get the hostname
    hostname_len = 100
    status = gethostname(hostname(1:hostname_len), hostname_len)
@@ -48,7 +50,7 @@ program mpi_parallel_sum
    write(*,'(A,I2,A,I2,A,A)') 'Hello world: rank ', rank, ' of ', size, ' running on node: ', trim(hostname)
 
    call mpi_reduce(local_sum, global_sum, 1, mpi_real, mpi_sum, 0, mpi_comm_world, ierr)
-   call mpi_barrier(mpi_comm_world, ierr)
+   ! call mpi_barrier(mpi_comm_world, ierr)
 
    if (rank == 0) then
       write(*,'(A,F10.3)') 'Total sum of the array is: ', global_sum

@@ -1,2 +1,2 @@
-adam-master:2
-adam-81cu:2
+adam-master:1
+adam-81cu:1
